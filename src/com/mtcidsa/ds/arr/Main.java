@@ -1,4 +1,4 @@
-package com.ds.arr;
+package com.mtcidsa.ds.arr;
 
 import java.util.ArrayList;
 import java.util.Arrays;
