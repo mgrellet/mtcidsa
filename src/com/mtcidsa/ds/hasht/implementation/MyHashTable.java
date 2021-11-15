@@ -13,7 +13,7 @@ public class MyHashTable {
         this.data = new ArrayList<>(size);
     }
 
-    String _hash(String key) {
+    private String hash(String key) {
         int hash = 0;
         for (int i = 0; i < key.length(); i++) {
             hash = (hash + (key.charAt(i) * i)) % this.size;
@@ -22,7 +22,7 @@ public class MyHashTable {
     }
 
     String get(String key) {
-        String hashedKey = _hash(key);
+        String hashedKey = hash(key);
         for (int i = 0; i < this.data.size(); i++) {
             if (this.data.get(i).equals(hashedKey)) {
                 return String.format(format, this.data.get(i + 1), this.data.get(i + 2));
@@ -33,7 +33,7 @@ public class MyHashTable {
 
     void set(String key, String value) {
         if (this.size > 0) {
-            String hashedKey = _hash(key);
+            String hashedKey = hash(key);
             this.data.add(hashedKey);
             this.data.add(key);
             this.data.add(value);
